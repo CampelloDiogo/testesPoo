@@ -7,6 +7,7 @@ public class exeDezesseis {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Random ge = new Random();
+        int num;
         int opcao;
   
         System.out.println("Digite seu nome: ");
@@ -43,7 +44,7 @@ public class exeDezesseis {
                 case 3:
                     System.out.println("Vamos descobrir se e verdadeiro(Par) ou Falso(Impar)");
                     System.out.println("Digite um numero inteiro!!");
-                    int num = sc.nextInt();    
+                    num = sc.nextInt();    
                    
                     imparPar(num);
                     
@@ -61,7 +62,10 @@ public class exeDezesseis {
                 break;
                 
                 case 5:
-                    System.out.println("Resultado:" + Arrays.toString(sistemaTabuada()));
+                    System.out.println("Digite um numero: ");
+                    num = sc.nextInt();
+                    
+                    System.out.println("Resultado:" + Arrays.toString(sistemaTabuada(num)));
                     System.out.println("Retornando ao Menu...");
                 break;
                 
@@ -88,15 +92,11 @@ public class exeDezesseis {
         sc.close();   
         
         System.out.println("Fim do Programa!");
-        System.out.println("By. campelinhoDaMassaDePaoDeQueijo");
-        
-        
+        System.out.println("By. campelinhoDaMassaDePaoDeQueijo");               
     } 
     ///////////////////FUNÇÃO SAUDAÇÃO///////////////////////////////////////////////////
     public static String saudacao(String nome){
-        return "Seja bem Vindo ao Sistema teste, " + nome + "!";
-        
-      
+        return "Seja bem Vindo ao Sistema teste, " + nome + "!";           
     }
     //////////////////////MENU;//////////////////////////////////////////////////
     public static void exibirMenu() {
@@ -126,9 +126,8 @@ public class exeDezesseis {
         return "aeiou".contains(letra);
     }
     ////////////////////////////IMPAR X PAR///////////////////////////////////////////////
-    ///
+ 
     public static void imparPar(int num){
-        Scanner sc = new Scanner(System.in);
         if (num %2 == 0) { 
             System.out.println("Seu numero e Verdadeiro(PAR)!!");
         } else {
@@ -140,13 +139,9 @@ public class exeDezesseis {
         return valor * (1 - (desconto / 100.0));        
     }
     /////////////////////////////////TABUADA DO 10////////////////
-    public static int[] sistemaTabuada() {
-        Scanner sc = new Scanner(System.in);
+    public static int[] sistemaTabuada(int num) {
         
         int tabuada[] = new int [10];
-        
-        System.out.println("Digite um numero: ");
-        int num = sc.nextInt();
         
         for (int i = 0; i < 10; i++){
             tabuada[i] = num * (i + 1);
